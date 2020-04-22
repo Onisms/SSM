@@ -9,10 +9,11 @@
 <html>
 <head>
     <title>Title</title>
+    <meta http-equiv="refresh" content="0; url=/account/loginPage">
 </head>
 <body>
 <h1>
-    <a href="testBean/queryAllByPages?current=1">分页查询所有用户</a>
+<%--    <a href="testBean/queryAllByPages?current=1">分页查询所有用户</a>--%>
 </h1>
 </body>
 </html>

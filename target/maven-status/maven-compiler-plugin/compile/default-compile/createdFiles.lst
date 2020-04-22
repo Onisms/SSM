@@ -1,11 +1,16 @@
+com\galaxy\entity\Dept.class
 com\galaxy\dao\AccountDao.class
 com\galaxy\service\TestBeanService.class
+com\galaxy\service\DeptService.class
 com\galaxy\web\controller\TestBeanController.class
 com\galaxy\web\interceptor\LoginInterceptor.class
 com\galaxy\service\impl\AccountServiceImpl.class
 com\galaxy\entity\TestBean.class
+com\galaxy\web\controller\DeptController.class
 com\galaxy\entity\Account.class
 com\galaxy\service\impl\TestBeanServiceImpl.class
 com\galaxy\web\controller\AccountController.class
+com\galaxy\dao\DeptDao.class
+com\galaxy\service\impl\DeptServiceImpl.class
 com\galaxy\dao\TestBeanDao.class
 com\galaxy\service\AccountService.class

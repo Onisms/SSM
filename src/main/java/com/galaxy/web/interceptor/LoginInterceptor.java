@@ -12,7 +12,7 @@ public class LoginInterceptor  implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
         //从session里面拿到  登录成功的值
-        Account loginAccount = (Account) request.getSession().getAttribute("LoginAccount");
+        Account loginAccount = (Account) request.getSession().getAttribute("loginAccount");
         if (loginAccount == null) {
             request.setAttribute("errorMsg", "请重新登录！");
             request.getRequestDispatcher("/WEB-INF/pages/account/login.jsp").forward(request,response);

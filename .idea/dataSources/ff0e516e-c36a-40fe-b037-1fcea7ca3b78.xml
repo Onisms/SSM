@@ -930,7 +930,7 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="235" parent="7" name="account"/>
-    <table id="236" parent="7" name="department">
+    <table id="236" parent="7" name="dept">
       <Comment>部门表</Comment>
     </table>
     <table id="237" parent="7" name="employee"/>
