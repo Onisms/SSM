@@ -46,9 +46,11 @@
 		<div class="col-lg-12">
 			<section class="panel">
 				<div class="panel-body">
-					<form class="form-inline" role="form" method="post" action="/Spring_Project/dept_list?pageNum=1">
+					<form class="form-inline" role="form" method="get" action="deptList">
 						<div class="form-group">
-							<label class="sr-only" for="name">部门名称</label> <input class="form-control" id="name" name="name" placeholder="部门名称" type="text">
+							<label class="sr-only" for="name">部门名称</label>
+							<input name="pageNum" value="1" type="hidden">
+							<input class="form-control" id="name" name="name" placeholder="部门名称" type="text">
 						</div>
 						<button type="submit" class="btn btn-round btn-info" id="search_but">检索</button>
 						<button type="button" class="btn btn-round btn-default" id="clean_but">清空</button>
@@ -81,7 +83,7 @@
 					</tr>
 				</thead>
 				<tbody>
-				     <form action="/Spring_Project/dept_delete" id="deleteForm" method="post">
+				     <form action="delete" id="deleteForm" method="post">
 		
 					    <c:forEach items="${ deptList }" var="dept">
 						<tr>
@@ -187,7 +189,8 @@
 			alert("不能选择多条数据修改！！！")
 	   }
 	   else{
-		   $("#deleteForm").attr('action',"/Spring_Project/dept_queryById");
+		   $("#deleteForm").attr('action',"queryById");
+		   $("#deleteForm").attr('method',"GET");
 			$('#deleteForm').submit();
 	   }
 	   

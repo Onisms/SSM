@@ -1,0 +1,106 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html style="overflow: hidden;" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Olive Enterprise">
+
+<!-- END SHORTCUT ICON -->
+<title>小莱信息化管理系统</title>
+	<jsp:include page="../base/link.jsp"/>
+<body onpageshow='event.persisted&amp;&amp;(function(){var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;if(d){d.$.designMode="off";d.$.designMode="on";}}})();;event.persisted&amp;&amp;(function(){var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;if(d){d.$.designMode="off";d.$.designMode="on";}}})();'>
+	<section id="container">
+
+		<jsp:include page="../base/header.jsp"/>
+
+	<script type="text/javascript">
+	
+	   function  show(id){
+		   for(var i=0;i<=5;i++)
+			{
+			     if(id==i)
+				 {
+				     if(document.getElementById("sub_"+id).style.display=="none")
+					 {
+					    document.getElementById("sub_"+id).style.display="block";
+					  
+					 }else
+					 {
+					   document.getElementById("sub_"+id).style.display="none";
+					 
+					 }
+				 }else
+				 {
+				    document.getElementById("sub_"+i).style.display="none";
+	
+				 }
+			}
+		
+	   }
+	
+    </script>
+		<jsp:include page="../base/aside.jsp"/>
+
+
+		<section id="main-content">
+
+<section class="wrapper">
+	
+	<div class="row">
+		<div class="col-lg-12" id="dept_main">
+
+<div class="col-md-12">
+	<section class="panel">
+		<header class="panel-heading">
+			<span class="label label-primary">修改部门</span> <span class="tools pull-right"> </span>
+		</header>
+		<div class="panel-body">
+			<p class="l_message" style="color: red;">${errorMsg}</p>
+			<form novalidate="novalidate" class="form-horizontal tasi-form" method="post" id="addForm"
+				  action="update">
+				<input name="id" value="${dept.id}" type="hidden">
+				 <input name="deptNo" value="D20170001" type="hidden">
+				<div class="form-group">
+					<label class="control-label col-md-3">部门名称</label>
+					<div class="col-md-3 col-xs-11">
+						<input name="name" value="${dept.name}" id="name" class="form-control form-control-inline input-medium " style="width:230px;" type="text">
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">部门描述</label>
+					<div class="col-md-9">
+	       
+    
+    <textarea name="description" cols="" rows="5" id="dept_comment"
+			  class="wysihtml5 form-control">${dept.description}
+	</textarea>
+
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-actions">
+					<input value="修改" class="btn btn-success" id="add_b111" type="submit"> &nbsp;&nbsp;&nbsp; <input value="取消" class="btn" id="cancel_b" type="button">
+				</div>
+			</form>
+		</div>
+	</section>
+	
+</div></div>
+	</div>
+</section></section>
+		<!-- END MAIN CONTENT -->
+		<!-- BEGIN FOOTER -->
+
+			<jsp:include page="../base/footer.jsp"/>
+
+	<!-- JQUERY KNOB JS -->
+	<script>
+      //knob
+      $(".knob").knob();
+    </script>
+
+</body></html>
