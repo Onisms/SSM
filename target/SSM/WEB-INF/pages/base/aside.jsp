@@ -19,7 +19,7 @@
                         <a href="/Spring_Project/meeting_list" title="会议信息管理">会议信息管理</a>
                     </li>
                     <li>
-                        <a href="/Spring_Project/dept_list?current=1" title="部门信息管理">会议信息管理</a>
+                        <a href="/map/empList?pageNum=1" title="部门信息管理">部门信息管理</a>
                     </li>
                 </ul>
             </li>
