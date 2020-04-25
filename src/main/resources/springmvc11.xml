@@ -31,15 +31,15 @@
     <mvc:annotation-driven/>
     
     <!--配置拦截器-->
-    <mvc:interceptors>
+  <!--  <mvc:interceptors>
         <mvc:interceptor>
-           <!--需要拦截的请求-->
+           &lt;!&ndash;需要拦截的请求&ndash;&gt;
             <mvc:mapping path="/**"/>
-            <!--不需要拦截的请求-->
+            &lt;!&ndash;不需要拦截的请求&ndash;&gt;
             <mvc:exclude-mapping path="/account/loginPage"/>
             <mvc:exclude-mapping path="/account/login"/>
-          <!--  <mvc:exclude-mapping path="/dept/deptList"/>
-            <mvc:exclude-mapping path="/dept/insertPage"/>-->
+          &lt;!&ndash;  <mvc:exclude-mapping path="/dept/deptList"/>
+            <mvc:exclude-mapping path="/dept/insertPage"/>&ndash;&gt;
 
 
             <mvc:exclude-mapping path="/css/**"/>
@@ -47,5 +47,5 @@
             <mvc:exclude-mapping path="/js/**"/>
             <bean class="com.galaxy.web.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
 </beans>

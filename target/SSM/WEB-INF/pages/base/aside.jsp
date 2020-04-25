@@ -14,12 +14,12 @@
                 </a>
                 <ul style="display: block;" id="sub_0" class="sub">
                     <li>
-                        <a class="active" href="/Spring_Project/emp_list" title="员工信息管理">员工信息管理</a></li>
+                        <a class="active" href="/emp/empList?pageNum=1" title="员工信息管理">员工信息管理</a></li>
                     <li>
-                        <a href="/Spring_Project/meeting_list" title="会议信息管理">会议信息管理</a>
+                        <a href="#" title="会议信息管理">会议信息管理</a>
                     </li>
                     <li>
-                        <a href="/map/empList?pageNum=1" title="部门信息管理">部门信息管理</a>
+                        <a href="/dept/deptList?pageNum=1" title="部门信息管理">部门信息管理</a>
                     </li>
                 </ul>
             </li>
