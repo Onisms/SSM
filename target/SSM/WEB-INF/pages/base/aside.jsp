@@ -16,7 +16,7 @@
                     <li>
                         <a class="active" href="/emp/empList?pageNum=1" title="员工信息管理">员工信息管理</a></li>
                     <li>
-                        <a href="#" title="会议信息管理">会议信息管理</a>
+                        <a href="/meeting/meetingList?pageNum=1" title="会议信息管理">会议信息管理</a>
                     </li>
                     <li>
                         <a href="/dept/deptList?pageNum=1" title="部门信息管理">部门信息管理</a>

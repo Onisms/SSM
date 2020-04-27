@@ -1050,7 +1050,7 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="238" name="empId">
+    <column id="259" parent="238" name="accountId">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -1080,8 +1080,8 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="238" name="fk_M_E">
-      <ColNames>empId</ColNames>
+    <index id="265" parent="238" name="pk_M_E">
+      <ColNames>accountId</ColNames>
       <Type>btree</Type>
     </index>
     <key id="266" parent="238" name="PRIMARY">
@@ -1089,9 +1089,9 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="267" parent="238" name="fk_M_E">
-      <ColNames>empId</ColNames>
-      <RefTableName>emp</RefTableName>
+    <foreign-key id="267" parent="238" name="pk_M_E">
+      <ColNames>accountId</ColNames>
+      <RefTableName>account</RefTableName>
       <RefColNames>id</RefColNames>
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>

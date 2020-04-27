@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html style="overflow: hidden;" lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -9,23 +9,74 @@
 <meta name="author" content="Olive Enterprise">
 
 <!-- END SHORTCUT ICON -->
-<title>小莱信息化管理系统</title>
 <jsp:include page="../base/link.jsp"/>
-<body onpageshow='event.persisted&amp;&amp;(function(){var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;if(d){d.$.designMode="off";d.$.designMode="on";}}})();event.persisted&amp;&amp;(function(){var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;if(d){d.$.designMode="off";d.$.designMode="on";}}})();'>
-<section id="container">
 
-<jsp:include page="../base/header.jsp"/>
-<jsp:include page="../base/aside.jsp"/>
+<body onpageshow='event.persisted&amp;&amp;(function(){
+	var x=CKEDITOR.instances,d,i;for(i in x){d=x[i].document;
+	if(d){d.$.designMode="off";d.$.designMode="on";}
+	}
+	})();;event.persisted&amp;&amp;(function(){
+		var x=CKEDITOR.instances,d,i;
+	for(i in x){
+		d=x[i].document;if(d)
+		{
+			d.$.designMode="off";d.$.designMode="on";
+		}
+	}
+	})();'>
+<script>
+	alert("aa");
+	//knob
+	$(".knob").knob();
+	window.onload=function () {
+		$("#authority").find("option[value='${emp.role}']").attr("selected", "selected");
+		$("#department").find("option[value='${emp.dept}']").attr("selected", "selected");
+		$("input[value='${emp.sex}']").attr("checked","checked");
+	}
+</script>
+	<section id="container">
 
-<section id="main-content">
-	<section class="wrapper">
+		<jsp:include page="../base/header.jsp"/>
+
+	<script type="text/javascript">
+	
+	   function  show(id){
+		   for(var i=0;i<=5;i++)
+			{
+			     if(id==i)
+				 {
+				     if(document.getElementById("sub_"+id).style.display=="none")
+					 {
+					    document.getElementById("sub_"+id).style.display="block";
+					  
+					 }else
+					 {
+					   document.getElementById("sub_"+id).style.display="none";
+					 
+					 }
+				 }else
+				 {
+				    document.getElementById("sub_"+i).style.display="none";
+	
+				 }
+			}
+		
+	   }
+	
+    </script>
+		<jsp:include page="../base/aside.jsp"/>
+
+		<section id="main-content">
+
+<section class="wrapper">
 	<div style="display: none;" class="row" id="userbar">
 		<div class="col-lg-12">
 			<section class="panel">
 				<div class="panel-body">
 					<form class="form-inline" role="form">
 						<div class="form-group">
-							<label class="sr-only" for="username">登录用户名</label> <input class="form-control" id="username" placeholder="登录用户名" type="text">
+							<label class="sr-only" for="username">登录用户名</label>
+							<input class="form-control" id="username" placeholder="登录用户名" type="text">
 						</div>
 						<div class="form-group">
 							<label class="sr-only" for="name">姓名</label>
@@ -46,94 +97,80 @@
 <div class="col-md-12">
 	<section class="panel">
 		<header class="panel-heading">
-			<span class="label label-primary">修改员工信息</span> <span class="tools pull-right"> </span>
+			<span class="label label-primary">添加员工信息</span> <span class="tools pull-right"> </span>
 		</header>
 		<div class="panel-body">
-<form novalidate="novalidate" class="form-horizontal tasi-form"
-	  method="post" id="addForm"
-	  action="update">
-	 <input name="id" value="${emp.id}" type="hidden">
-	 <input name="state" value="${emp.state}" type="hidden">
-	<div class="form-group">
-		<label class="control-label col-md-3">员工姓名</label>
-		<div class="col-md-3 col-xs-11">
-			<input name="name" value="${ emp.name }" id="name"
-				   class="form-control form-control-inline input-medium
-				   default-date-picker" style="width:80px;" type="text" <%--disabled--%>>
-			<span class="help-block" style="color: red;"></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-3">性别</label>
-		<div class="col-md-3 col-xs-11">
-			<input id="sex男" name="sex" value="男" type="radio">
-			<label for="sex男">男</label>
-			<input id="sex女" name="sex" value="女" type="radio">
-			<label for="sex女">女</label>
-			<span class="help-block" style="color: red;"></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-3">联系电话</label>
-		<div class="col-md-3 col-xs-11">
-			<input name="phone" id="phone" value="${ emp.phone }"
-				   class="form-control form-control-inline input-medium default-date-picker"
-				   style="width:120px;" type="text">
-			<span class="help-block" style="color: red;"></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-3">所属部门</label>
-		<div class="col-md-3 col-xs-11">
-			<select name="dept" id="department"
-					class="form-control form-control-inline input-medium default-date-picker"
-					style="width:240px;">
-				<c:forEach items="${deptList}" var="dept">
-					<option value="${dept.name}">${dept.name}</option>
-				</c:forEach>
-			</select>
-			<span class="help-block" style="color: red;"></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-3">角色权限</label>
-		<div class="col-md-3 col-xs-11">
-			<select name="role" id="authority" class="form-control form-control-inline input-medium default-date-picker" style="width:180px;">
-				<option value="普通员工">普通员工</option>
-				<option value="部门经理">部门经理</option>
-				<option value="总经理">总经理</option>
-				<option value="管理员">管理员</option>
-			</select>
-			<span class="help-block" style="color: red;"></span>
-		</div>
-	</div>
-	<div class="form-actions">
-		<input value="修改" class="btn btn-success" type="submit"> &nbsp;&nbsp;&nbsp;
-		<input value="取消" class="btn" id="cancel_b" type="button">
-	</div>
-</form>
+			<form novalidate="novalidate" class="form-horizontal tasi-form" method="post" id="addForm" action="update">
+				<input name="id" value="${emp.id}" type="hidden">
+				<input name="state" value="${emp.state}" type="hidden">
+				<div class="form-group">
+					<label class="control-label col-md-3">员工姓名</label>
+					<div class="col-md-3 col-xs-11">
+						<input name="user.name" value="${emp.name}" id="name"
+							   class="form-control form-control-inline input-medium default-date-picker" style="width:80px;" type="text" disabled>
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">性别</label>
+					<div class="col-md-3 col-xs-11">
+						<input id="sex男" name="sex" value="男" type="radio">
+						<label for="sex男">男</label>
+						<input id="sex女" name="sex" value="女" type="radio">
+						<label for="sex女">女</label>
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">联系电话</label>
+					<div class="col-md-3 col-xs-11">
+						<input name="phone" id="phone" value="${emp.phone}"
+							   class="form-control form-control-inline input-medium default-date-picker" style="width:120px;" type="text">
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">所属部门</label>
+					<div class="col-md-3 col-xs-11">
+						<select name="dept" id="department"
+								class="form-control form-control-inline input-medium default-date-picker" style="width:240px;">
+							<c:forEach items="${deptList}" var="dept">
+								<option value="${dept.name}">${dept.name}</option>
+							</c:forEach>
+						</select>
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3">角色权限</label>
+					<div class="col-md-3 col-xs-11">
+						<select name="role" id="authority" class="form-control form-control-inline input-medium default-date-picker" style="width:180px;">
+							<option value="普通员工">普通员工</option>
+							<option value="部门经理">部门经理</option>
+							<option value="总经理">总经理</option>
+							<option value="管理员">管理员</option>
+						</select>
+						<span class="help-block" style="color: red;"></span>
+					</div>
+				</div>
+				<div class="form-actions">
+					<input value="添加" class="btn btn-success" type="submit"> &nbsp;&nbsp;&nbsp;
+					<input value="取消" class="btn" id="cancel_b" type="button">
+				</div>
+			</form>
 		</div>
 	</section>
 </div></div>
 	</div>
-</section>
-</section>
+</section></section>
 		<!-- END MAIN CONTENT -->
 		<!-- BEGIN FOOTER -->
 
-<jsp:include page="../base/footer.jsp"/>
+			<jsp:include page="../base/footer.jsp"/>
+<!-- CKEDITOR JS  -->
 	<!-- JQUERY KNOB JS -->
-<script>
-  //knob
-  $(".knob").knob();
-  alert("aa");
-  window.onload=function () {
-	  $("#authority").find("option[value='${emp.role}']").attr("selected", "selected");
-	  $("#department").find("option[value='${emp.dept}']").attr("selected", "selected");
-	  $("input[value='${emp.sex}']").attr("checked","checked");
-  }
-</script>
 
 
 </body>
+
 </html>
